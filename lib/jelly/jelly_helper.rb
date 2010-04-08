@@ -16,7 +16,7 @@ module JellyHelper
     attach_javascript_component("Jelly.Page", controller.controller_path.camelcase, controller.action_name)
     javascript_tag <<-JS
       #{window_token}
-      #{attach_javascript_component(jelly_attachments)}
+      #{attach_javascript_component_ready(jelly_attachments)}
     JS
   end
   
@@ -28,7 +28,7 @@ module JellyHelper
     javascript_tag(window_token)
   end
   
-  def attach_javascript_component(*components)
+  def attach_javascript_component_ready(*components)
     components = [components].flatten
     <<-JS
     $(document).ready(function() {
@@ -38,7 +38,7 @@ module JellyHelper
   end
 
   def attach_javascript_component_javascript_tag(*components)    
-    javascript_tag (attach_javascript_component(components))
+    javascript_tag (attach_javascript_component_ready(*components))
   end
 
   def clear_jelly_attached
