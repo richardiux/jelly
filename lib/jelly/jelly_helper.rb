@@ -25,7 +25,7 @@ module JellyHelper
   end
 
   def window_token_javascript_tag
-    javascript_tag(window_token_contents)
+    javascript_tag(window_token)
   end
   
   def attach_javascript_component(*components)
