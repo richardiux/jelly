@@ -1,9 +1,9 @@
 # This file is copied to ~/spec when you run 'ruby script/generate rspec'
 # from the project root directory.
 ENV["RAILS_ENV"] ||= 'test'
-ENV['RAILS_ROOT'] ||= File.dirname(__FILE__) + '/rails_root'
+ENV['Rails.root'] ||= File.dirname(__FILE__) + '/rails_root'
 ARGV.push("-b")
-require File.expand_path(File.join(ENV['RAILS_ROOT'], 'config/environment.rb'))
+require File.expand_path(File.join(ENV['Rails.root'], 'config/environment.rb'))
 require 'rubygems'
 gem "test-unit"
 require 'test/unit'
